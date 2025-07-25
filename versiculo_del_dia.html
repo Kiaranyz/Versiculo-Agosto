@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Versículo del Día</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+      background: #fdf5e6; /* Fondo crema */
+      color: #333;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #357ab7;
+    }
+    #resultado {
+      margin-top: 40px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    #instruccion {
+      margin-top: 20px;
+      font-size: 18px;
+      background: #fff8dc;
+      padding: 15px;
+      border-radius: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>📖 Versículo del Día 📖</h1>
+  <p>Haz clic en el botón para descubrirlo</p>
+  <button onclick="mostrarVersiculo()">Mostrar Versículo</button>
+  <div id="resultado"></div>
+  <div id="instruccion">Haz un video corto explicando lo que este versículo habló a tu vida y compártelo por el chat.</div>
+
+  <script>
+    const versiculos = [
+      "Isaías 41:10 NVI",
+      "Isaías 60:22",
+      "Isaías 43:1-2 PDT",
+      "Mateo 21:22",
+      "Mateo 5:13-14",
+      "Mateo 17:20",
+      "Mateo 18:22",
+      "Mateo 6:33",
+      "1 Corintios 12:27",
+      "1 Corintios 14:33",
+      "1 Corintios 13:8",
+      "2 Corintios 1:4",
+      "2 Corintios 3:18",
+      "2 Corintios 12:9",
+      "Romanos 11:36",
+      "Romanos 12:2",
+      "Romanos 8:37",
+      "Romanos 8:31",
+      "Salmos 32:8",
+      "Salmos 65:7",
+      "Salmos 103:1-2",
+      "Salmos 102",
+      "Efesios 4:32",
+      "Efesios 3:17-18",
+      "Juan 3:16",
+      "Juan 8:36",
+      "Lucas 6:31",
+      "Lucas 3:22",
+      "Marcos 5:36",
+      "Jeremías 33:3",
+      "Jonás 2:2",
+      "Daniel 3:25"
+    ];
+
+    function mostrarVersiculo() {
+      const hoy = new Date();
+      const mes = hoy.getMonth();
+      const diaDelMes = hoy.getDate();
+      const diaUsado = (mes === 7) ? diaDelMes : 1; // agosto = mes 7
+      const index = (diaUsado - 1) % versiculos.length;
+      document.getElementById("resultado").innerText = versiculos[index];
+      document.getElementById("instruccion").style.display = 'block';
+    }
+  </script>
+</body>
+</html>
